@@ -18,7 +18,7 @@ sleep 15
 # 4 - Run the NodeJS application in the background
 cd package
 npm install
-nohup node server.js &
+node server.js &
 echo "The Node Server is up & running in the backgroud."
 nodeid=$(pgrep node)
 echo "Node.js Server process ID: $nodeid"

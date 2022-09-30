@@ -31,6 +31,20 @@ sleep 5
 export APP_ENV=dev
 export DB_USER=myuser
 export DB_PWD=mysecret
+
+# Ask where to save the log
+read -p "Where do you to store the log? Enter the absolute path of the folder: " log_directory
+
+# Check if the folder exist
+if [ ! -d "$log_directory" ]; then
+  echo "$log_directory does not exist."
+  mkdir $log_directory
+  echo "Log folder created created"
+fi
+
+# Setup DB folder env
+export LOG_DIR=$log_directory
+
 echo "Local Environment configured"
 sleep 5
 

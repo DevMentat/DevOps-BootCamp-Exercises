@@ -22,4 +22,7 @@ Exercise 6: Bash Script - Node App Check Status
 ✅ 
 
 Exercise 7: Bash Script - Node App with Log Directory
+✅
+
+Exercise 8: Bash Script - Node App with Service User
 🟦 Working on it

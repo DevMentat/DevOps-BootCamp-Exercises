@@ -2,13 +2,13 @@
 # 1 - Install NodeJS and NPM and print out which versions were installed
 sudo apt-get install -y nodejs npm wget net-tools
 nodejs --version
-echo "NodeJS sucessfuly installed"
+echo "NodeJS successfully installed"
 sleep 15
 # 2 - Download an artifact file and unzip it
 wget https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz
 echo "Artefact downloaded"
 tar --extract --file bootcamp-node-envvars-project-1.0.0.tgz
-echo "Artefact unarchived"
+echo "Artefact archived"
 # 3 - Set the following needed environment variables
 export APP_ENV=dev
 export DB_USER=myuser
@@ -19,7 +19,7 @@ sleep 15
 cd package
 npm install
 node server.js &
-echo "The Node Server is up & running in the backgroud."
+echo "The Node Server is up & running in the background."
 nodeid=$(pgrep node)
 echo "Node.js Server process ID: $nodeid"
 echo "The Server run on port 3000:"

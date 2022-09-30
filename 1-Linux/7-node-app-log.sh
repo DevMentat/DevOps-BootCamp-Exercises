@@ -24,7 +24,7 @@ sleep 5
 
 # Extract Artefact
 tar --extract --file bootcamp-node-envvars-project-1.0.0.tgz
-echo "Artefact unarchived"
+echo "Artefact archived"
 sleep 5
 
 # Setup env var
@@ -41,7 +41,7 @@ npm install
 
 node server.js &
 sleep 5
-echo "The Node Server is running in the backgroud."
+echo "The Node Server is running in the background."
 
 # Show the process
 nodeid=$(pgrep node)

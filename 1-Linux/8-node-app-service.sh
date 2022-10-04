@@ -1,8 +1,8 @@
 #!/bin/bash
-
+# Execute this script with sudo
 #Define Variable
-NEW_USER="node-server"
-
+NEW_USER="npmserver"
+echo "###################"
 # Ask where to save the log
 read -p "Where do you to store the log? Enter the absolute path of the folder: " log_directory
 
@@ -14,10 +14,10 @@ if [ ! -d "$log_directory" ]; then
 fi
 
 # Prepare the env
-sudo apt-get update
+apt update
 
 # Install the tools needed
-sudo apt-get install -y nodejs npm wget net-tools
+apt install -y nodejs npm wget net-tools
 sleep 10
 
 # Check NodeJS
@@ -31,36 +31,38 @@ echo "NPM is installed with the version $npmv"
 sleep 5
 
 # --- Now we start to work on the service user ---
-
+echo "###################"
 # Create the Service User
-sudo useradd $NEW_USER -M
-chown $NEW_USER -R $log_directory
+useradd $NEW_USER -m
+chown -R  $NEW_USER $log_directory
 
 # Download Artefact
-runuser -l $NEW_USER -c wget https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz
+runuser -l $NEW_USER -c "wget https://node-envvars-artifact.s3.eu-west-2.amazonaws.com/bootcamp-node-envvars-project-1.0.0.tgz"
 echo "Artefact downloaded"
 sleep 5
 
 # Extract Artefact
-runuser -l $NEW_USER -c tar --extract --file bootcamp-node-envvars-project-1.0.0.tgz
+runuser -l $NEW_USER -c "tar --extract --file bootcamp-node-envvars-project-1.0.0.tgz"
 echo "Artefact archived"
 sleep 5
 
 # Setup env var
 runuser -l $NEW_USER -c "
-export APP_ENV=dev
-export DB_USER=myuser
-export DB_PWD=mysecret
-export LOG_DIR=$log_directory
-cd package && npm install
-node server.js &"
+  export APP_ENV=dev &&
+  export DB_USER=myuser &&
+  export DB_PWD=mysecret &&
+  export LOG_DIR=$log_directory &&
+  cd package &&
+  npm install &&
+  node server.js &"
 
 sleep 5
 echo "The Node Server is running in the background."
-
+echo "###################"
+sleep 5
 # Show the process
-runuser -l $NEW_USER -c nodeid=$(pgrep node)
+nodeid=$(pgrep node)
 echo "Node.js Server process ID: $nodeid"
 
 #Show the port used
-runuser -l $NEW_USER -c sudo netstat -ltnp | grep :3000
+netstat -ltnp | grep :3000

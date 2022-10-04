@@ -25,4 +25,26 @@ Exercise 7: Bash Script - Node App with Log Directory
 ✅
 
 Exercise 8: Bash Script - Node App with Service User
-🟦 Working on it
+✅
+
+## Module 2 - Version Control with Git
+🟦 On Gitlab, link soon
+Exercise 1: Clone and create new repository
+
+Exercise 2: .gitignore
+
+Exercise 3: Feature branch
+
+Exercise 4: Bugfic branch
+
+Exercise 5: Merge request
+
+Exercise 6: Fix merge conflict
+
+Exercise 7: Revert commit
+
+Exercise 8: Reset commit
+
+Exercise 9: Merge
+
+Exercise 10: Delete branches

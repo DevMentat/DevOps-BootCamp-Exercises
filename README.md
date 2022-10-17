@@ -41,3 +41,16 @@ This is all my Bootcamp projects
 ✅ Exercise 9: Merge
 
 ✅ Exercise 10: Delete branches
+
+## Module 3 - Build Tools & Package Manager Tools
+
+
+✅ Exercise 1: Build jar artifact
+
+✅ Exercise 2: Run tests
+
+✅ Exercise 3: Clean and build App
+
+✅ Exercise 4: Start application
+
+✅ Exercise 5: Start App with 2 Parameters

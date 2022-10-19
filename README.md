@@ -54,3 +54,17 @@ This is all my Bootcamp projects
 ✅ Exercise 4: Start application
 
 ✅ Exercise 5: Start App with 2 Parameters
+
+## Module 4 - Cloud & IaaS Basics
+
+✅ Exercise 1: Package NodeJS App
+
+✅ Exercise 2: Create a new cloud server
+
+✅ Exercise 3: Prepare server to run Node App
+
+✅ Exercise 4: Copy App and package.json
+
+✅ Exercise 5: Run Node App
+
+✅ Exercise 6: Access from browser - configure the firewall

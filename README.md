@@ -42,29 +42,6 @@ This is all my Bootcamp projects
 
 ✅ Exercise 10: Delete branches
 
-## Module 3 - Build Tools & Package Manager Tools
+## Module 6 - Nexus Repo Manager
 
-
-✅ Exercise 1: Build jar artifact
-
-✅ Exercise 2: Run tests
-
-✅ Exercise 3: Clean and build App
-
-✅ Exercise 4: Start application
-
-✅ Exercise 5: Start App with 2 Parameters
-
-## Module 4 - Cloud & IaaS Basics
-
-✅ Exercise 1: Package NodeJS App
-
-✅ Exercise 2: Create a new cloud server
-
-✅ Exercise 3: Prepare server to run Node App
-
-✅ Exercise 4: Copy App and package.json
-
-✅ Exercise 5: Run Node App
-
-✅ Exercise 6: Access from browser - configure the firewall
+✅ Exercise 1: Automate script for fetching and running a nodejs server from Nexus

@@ -45,3 +45,9 @@ This is all my Bootcamp projects
 ## Module 6 - Nexus Repo Manager
 
 ✅ Exercise 1: Automate script for fetching and running a nodejs server from Nexus
+
+## Module 7 - Docker
+✅ Exercise 1: Start MySQL container
+✅ Exercise 2: Start PHPMyAdmin container
+✅ Exercise 3: Create a docker-compose with the two apps
+🟦 Exercise 4: Dockerize the Java Application

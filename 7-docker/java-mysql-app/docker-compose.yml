@@ -1,12 +1,24 @@
 version: "3.9"
 services:
+  java-app:
+    image: localhost:9095/java-app:1.1
+    environment:
+      DB_USER: "${DB_USER}"
+      DB_PWD: "${DB_PWD}"
+      DB_SERVER: "${DB_SERVER}"
+      DB_NAME: "${DB_NAME}"
+    ports:
+      - "8080:8080"
+    container_name: java-app
+    depends_on:
+      - mysql
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: "usebitwardenplease"
-      MYSQL_DATABASE: "java-app"
-      MYSQL_USER: "dev"
-      MYSQL_PASSWORD: "mentat"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PWD}"
     container_name: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -14,19 +26,20 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
       - "8081:80"
     environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: "usebitwardenplease"
-      MYSQL_USER: "dev"
-      MYSQL_PASSWORD: "mentat"
+      PMA_HOST: "${PMA_HOST}"
+      PMA_PORT: "${PMA_PORT}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PWD}"
     restart: always
     container_name: phpmyadmin
-
+    depends_on:
+      - mysql
 volumes:
   mysql-data:
     driver: local

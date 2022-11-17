@@ -1,10 +1,16 @@
 FROM openjdk:8-jre-alpine
 
+EXPOSE 8080
+
 ENV DB_USER=dev \
     DB_PWD=mentat \
     DB_SERVER=localhost \
     DB_NAME=java-app
 
-COPY build/libs/bootcamp-java-mysql-project-*.*-SNAPSHOT.jar /java-app.jar
+RUN mkdir /opt/app
 
-CMD ["/usr/bin/java", "-jar", "-Dspring.profiles.active=test", "/java-app.jar"]
+COPY build/libs/bootcamp-java-mysql-project-1.0-SNAPSHOT.jar /opt/app
+
+WORKDIR /opt/app
+
+CMD ["java", "-jar", "bootcamp-java-mysql-project-1.0-SNAPSHOT.jar"]

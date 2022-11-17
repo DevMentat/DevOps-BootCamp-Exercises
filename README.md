@@ -47,7 +47,19 @@ This is all my Bootcamp projects
 ✅ Exercise 1: Automate script for fetching and running a nodejs server from Nexus
 
 ## Module 7 - Docker
+
 ✅ Exercise 1: Start MySQL container
+
 ✅ Exercise 2: Start PHPMyAdmin container
+
 ✅ Exercise 3: Create a docker-compose with the two apps
-🟦 Exercise 4: Dockerize the Java Application
+
+✅ Exercise 4: Dockerize the Java App
+
+✅ Exercise 5: Build & Push the Java Docker Image
+
+✅ Exercise 6: Add the java app to the docker-compose
+
+✅ Exercise 7: Run the app with docker-compose with envs
+
+✅ Exercise 8: Open ports
